@@ -1,4 +1,6 @@
 var express = require('express');
+var https = require('https');
+var fs = require('fs');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -20,7 +22,15 @@ app.get('*', function(req, res) {
   res.sendFile('./public/index.html');
 });
 
-app.listen(port);
-console.log("Server running: http://localhost:"+port);
+//app.listen(port); //http
+
+// https://letsencrypt.org/howitworks/
+var options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+}
+//TODO: if env = dev, self-sign certificate
+https.createServer(options,app).listen(443);
+console.log("Server running: https://localhost:"+port);
 
 module.exports = app;
