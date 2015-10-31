@@ -1,0 +1,28 @@
+{
+  "name": "ark-web-admin",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bradleymize/ark-web-admin",
+  "authors": [
+    "Bradley Mize <general_bradley@hotmail.com>"
+  ],
+  "description": "Ark: Survival Evolved Web Administration",
+  "keywords": [
+    "ark",
+    "survival",
+    "evolved",
+    "web",
+    "admin",
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "AdminLTE-Angular": "https://github.com/bradleymize/AdminLTE.git#bower.test"
+  }
+}
